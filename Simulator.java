@@ -41,7 +41,7 @@ public class Simulator {
     /**
      * Construct a Simulator object by instantiating {@code server} and
      * {@code students}.
-     * 
+     *
      * @param num the number of students in this simulation
      */
     public Simulator(int num) {
@@ -53,7 +53,7 @@ public class Simulator {
 
     /**
      * You need to figure out what this method does.
-     * 
+     *
      * @param list the list of integer to check validity for
      * @return You need to figure out what this method returns
      */
@@ -70,8 +70,8 @@ public class Simulator {
 
     /**
      * You need to figure out what this method does.
-     * 
-     * @param locations a list parallel to {@code students} that denotes each 
+     *
+     * @param locations a list parallel to {@code students} that denotes each
      *                  student's new location.
      * @return You need to figure out what this method returns
      */
@@ -83,11 +83,11 @@ public class Simulator {
         }
         return true;
     }
-    
+
     /**
      * You need to figure out what this method does.
-     * 
-     * @param infections a list parallel to {@code students} that denotes each 
+     *
+     * @param infections a list parallel to {@code students} that denotes each
      *                   student's new infection status.
      * @return You need to figure out what this method returns
      */
@@ -104,11 +104,11 @@ public class Simulator {
 
     /**
      * You need to figure out what this method does.
-     * 
-     * @param quarantineChoices a list parallel to {@code students} that 
-     *                          denotes whether each student would quarantine 
+     *
+     * @param quarantineChoices a list parallel to {@code students} that
+     *                          denotes whether each student would quarantine
      *                          if they receive a notification of exposure.
-     * @param fromTime the starting time that students should check risk from 
+     * @param fromTime the starting time that students should check risk from
      * @return You need to figure out what this method returns
      */
     public int riskCheckAll(ArrayList<Integer> quarantineChoices,
@@ -126,7 +126,7 @@ public class Simulator {
 
     /**
      * You need to figure out what this method does.
-     * 
+     *
      * @param student1 the first student to exchange information. If it is
      *                 null, nothing will be exchanged.
      * @param student2 the second student to exchange information. If it is
@@ -150,16 +150,16 @@ public class Simulator {
     }
 
     /**
-     * Simulate a single day of moving, infecting, and notifying. 
-     * 
-     * @param locations a list parallel to {@code students} that denotes each 
+     * Simulate a single day of moving, infecting, and notifying.
+     *
+     * @param locations a list parallel to {@code students} that denotes each
      *                  student's new location.
-     * @param infections a list parallel to {@code students} that denotes each 
+     * @param infections a list parallel to {@code students} that denotes each
      *                   student's new infection status.
-     * @param quarantineChoices a list parallel to {@code students} that 
-     *                          denotes whether each student would quarantine 
+     * @param quarantineChoices a list parallel to {@code students} that
+     *                          denotes whether each student would quarantine
      *                          if they receive a notification of exposure.
-     * @param currentTime the current day. 
+     * @param currentTime the current day.
      * @return you need to figure this out
      */
     public int simulateOneDay(ArrayList<Integer> locations,
@@ -172,7 +172,7 @@ public class Simulator {
         updateLocations(locations);
         updateInfectionStatus(infections);
 
-        // Simulate information exchange 
+        // Simulate information exchange
         for(int i = 0; i < students.size(); i++) {
             for(int j = i+1; j < students.size(); j++) {
                 exchangeInfo(students.get(i), students.get(j), currentTime);
@@ -186,7 +186,7 @@ public class Simulator {
 
     /**
      * You need to figure out what this method does.
-     * 
+     *
      * @param args the command line arguments
      * @throws IOException you need to figure out when this will be thrown
      */
@@ -229,12 +229,12 @@ public class Simulator {
         }
         System.out.printf(FINAL_RESULT_STR, time, totalNumOfNotifications);
         sc.close();
-    } 
-    
+    }
+
      /**
-     * Processes a single line of ints from the information file into a list 
-     * of integers. 
-     * 
+     * Processes a single line of ints from the information file into a list
+     * of integers.
+     *
      * @param line the comma-delimited list of ints from the information file
      * @return the list of ints
      */
@@ -246,12 +246,12 @@ public class Simulator {
     }
 
     /**
-     * Prints a list of integers to standard out, prepended with some input 
-     * information. 
-     * 
-     * @param prompt a string to be prepended to the list of integers (e.g., 
-     *               as a description). 
-     * @param list the integers to be printed. 
+     * Prints a list of integers to standard out, prepended with some input
+     * information.
+     *
+     * @param prompt a string to be prepended to the list of integers (e.g.,
+     *               as a description).
+     * @param list the integers to be printed.
      */
     private static void printList(String prompt, ArrayList<Integer> list) {
         System.out.print(prompt);
@@ -259,12 +259,12 @@ public class Simulator {
         System.out.println();
     }
     /**
-     * Prints a list of students to standard out, prepended with some input 
-     * information. 
-     * 
-     * @param prompt a string to be prepended to the list of students (e.g., 
-     *               as a description). 
-     * @param students the students to be printed. 
+     * Prints a list of students to standard out, prepended with some input
+     * information.
+     *
+     * @param prompt a string to be prepended to the list of students (e.g.,
+     *               as a description).
+     * @param students the students to be printed.
      */
     private static void printStudents(String prompt,
                                         ArrayList<Student> students) {
